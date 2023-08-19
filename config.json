@@ -1,0 +1,17 @@
+{
+    "kafka_bootstrap_servers": ["207.148.66.72:9092"],
+    "module_code": "det-asm-lstm",
+    "module_otype": "file",
+    "module_indir": "/data/modules/det-asm-lstm/input",
+    "module_outdir": "",
+    "module_input_format": "filepath",
+    "module_output_format": "boolean",
+
+    "vocab_path": "models/vocabulary_inv.json",
+    "sequence_length": 200,
+    "max_words": 1000,
+    "min_word_count": 1,
+    "context": 10,
+    
+    "model_path": "models/lstm_best__9427_1926.h5"
+}
