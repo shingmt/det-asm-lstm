@@ -104,6 +104,9 @@ class SilentWorker(SilentWorkerBase):
         #! Do something
         log('[ ][SilentWorker][infer] I\'m pretty')
 
-        # self.asm_module.from_files(self._map_ohash_inputs, config_data['method'], self.__onFinishInfer__)
-        #! method is fixed. same code for cnn and lstm model, but can be deployed as two separate modules
-        self.asm_module.from_files(self._map_ohash_inputs, self.__onFinishInfer__)
+        try:
+            # self.asm_module.from_files(self._map_ohash_inputs, config_data['method'], self.__onFinishInfer__)
+            #! method is fixed. same code for cnn and lstm model, but can be deployed as two separate modules
+            self.asm_module.from_files(self._map_ohash_inputs, self.__onFinishInfer__)
+        except:
+            log(f'[!][SilentWorker][infer] Failed with exception')

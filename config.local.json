@@ -3,16 +3,16 @@
     "module_code": "det-asm-lstm",
     "module_type": "detector",
     "module_otype": "file",
-    "module_indir": "/data/modules/det-asm-lstm/input",
+    "module_indir": "/home/mta-smad/smad-3/data/modules/det-asm-lstm/input",
     "module_outdir": "",
-    "module_input_format": "filepath",
+    "module_input_format": ["filepath", "filepath", "filepath"],
     "module_output_format": "boolean",
 
-    "vocab_path": "models/vocabulary_inv.json",
+    "vocab_path": "/home/alex/smad-modules/det-asm-lstm/models/vocabulary_inv.json",
     "sequence_length": 200,
     "max_words": 1000,
     "min_word_count": 1,
     "context": 10,
     
-    "model_path": "models/lstm_best__9427_1926.h5"
+    "model_path": "/home/alex/smad-modules/det-asm-lstm/models/lstm_best__9427_1926.h5"
 }

@@ -68,7 +68,14 @@ class AsmModule:
 
     def from_files(self, _map_ohash_inputs, callback):
         seq_datas = []
-        for ohash,filepath in _map_ohash_inputs:
+        for ohash,filepaths in _map_ohash_inputs.items():
+            #? filepaths is an array of 3 paths: 
+            # [
+            #   '/home/mta-smad/smad-3/data/modules/prp-disasm/output/asm_cleaned/admin__2023-08-27_14-24-11__Lab_05-1.malware.asm', 
+            #   '/home/mta-smad/smad-3/data/modules/prp-disasm/output/cfg/admin__2023-08-27_14-24-11__Lab_05-1.malware.jpg', 
+            #   '/home/mta-smad/smad-3/data/modules/prp-disasm/output/cfg/admin__2023-08-27_14-24-11__Lab_05-1.malware.dot'
+            # ]
+            filepath = filepaths[0] #? asm path is the 1st path
             asm = [line.strip() for line in open(filepath, 'r').readlines()]
             seq_datas.append(asm)
 
