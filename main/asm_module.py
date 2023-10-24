@@ -23,8 +23,7 @@ class AsmModule:
         self.change_config(config)
 
         self.clean_pattern = re.compile(r'(.*)(\||\│|\╎|\└|\\|\<|\>)\s(.*)')
-        self.replace_var_pattern = re.compile(
-            r'((0x|fcn\.|arg\_|var\_)([0-9a-z]{1,8}))')
+        self.replace_var_pattern = re.compile(r'((0x|fcn\.|arg\_|var\_)([0-9a-z]{1,8}))')
         
         self._vocab_path = config['vocab_path']
         self._sequence_length = config['sequence_length']
@@ -94,7 +93,7 @@ class AsmModule:
         with self.graph.as_default():
             with self.session.as_default():
                 preds = [pred[0] for pred in self._model.predict(X)]
-                lbl_preds = np.array([1 if pred > 0.5 else 0 for pred in preds]) #? only 1 or 0 (boolean result)
+                lbl_preds = np.array([1 if pred > 0.99 else 0 for pred in preds]) #? only 1 or 0 (boolean result)
 
         print('[+][Asm_Module][from_files] lbl_preds, preds', lbl_preds, preds)
 
